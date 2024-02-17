@@ -13,5 +13,4 @@ vaadin:
   launch-browser: true
 # To improve the performance during development.
 # For more information https://vaadin.com/docs/flow/spring/tutorial-spring-configuration.html#special-configuration-parameters
-vaadin:
-  whitelisted-packages = com.vaadin,org.vaadin,dev.hilla,kdima90
+  whitelisted-packages: com.vaadin,org.vaadin,dev.hilla,kdima90
