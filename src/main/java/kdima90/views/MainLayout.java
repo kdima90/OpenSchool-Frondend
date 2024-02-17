@@ -11,8 +11,11 @@ import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import kdima90.views.helloworld.HelloWorldView;
-import kdima90.views.home.HomeView;
+import kdima90.views.home.Home;
+import kdima90.views.profile.Profile;
+import kdima90.views.schedule.Schedule;
+import kdima90.views.school.School;
+import kdima90.views.settings.Settings;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 
 /**
@@ -39,7 +42,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("My App");
+        H1 appName = new H1("OpenSchool");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -50,9 +53,12 @@ public class MainLayout extends AppLayout {
 
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
-
-        nav.addItem(new SideNavItem("Hello World", HelloWorldView.class, LineAwesomeIcon.GLOBE_SOLID.create()));
-        nav.addItem(new SideNavItem("Home", HomeView.class, LineAwesomeIcon.FILE.create()));
+        //https://icons8.com/line-awesome
+        nav.addItem(new SideNavItem("Home", Home.class, LineAwesomeIcon.HOME_SOLID.create()));
+        nav.addItem(new SideNavItem("Schedule", Schedule.class, LineAwesomeIcon.BOOK_OPEN_SOLID.create()));
+        nav.addItem(new SideNavItem("School", School.class, LineAwesomeIcon.BUILDING_SOLID.create()));
+        nav.addItem(new SideNavItem("Profile", Profile.class, LineAwesomeIcon.USER.create()));
+        nav.addItem(new SideNavItem("Settings", Settings.class, LineAwesomeIcon.TOOLS_SOLID.create()));
 
         return nav;
     }
